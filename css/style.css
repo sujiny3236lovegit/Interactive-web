@@ -1,11 +1,40 @@
+/* animation */
+@keyframes ani-head {
+  to {
+    transform: rotateX(-10deg);
+  }
+}
+@keyframes ani-running-leg {
+  from {
+    transform: rotateX(-30deg);
+  }
+  to {
+    transform: rotateX(30deg);
+  }
+}
+@keyframes ani-running-arm {
+  from {
+    transform: rotateY(30deg);
+  }
+  to {
+    transform: rotateY(-30deg);
+  }
+}
+
 body {
-  height: 500vw; /* scroll하기 위함 */
-  font-family: "Apple 3D Gothic Neo", "Roboto", "Noto Sans KR", NanumGothic,
+  height: 500vw;
+  font-family: "Apple SD Gothic Neo", "Roboto", "Noto Sans KR", NanumGothic,
     "Malgun Gothic", sans-serif;
   -webkit-overflow-scrolling: touch;
   color: #555;
   background: #fff000;
+  transition: background 0.5s;
 }
+body[data-char="ragirl"] {
+  background: #ff7200;
+}
+
+/* world */
 .world {
   position: fixed;
   left: 0;
@@ -37,16 +66,14 @@ body {
   background: rgba(255, 255, 255, 0.8);
 }
 .wall-left {
-  left: -500vw;
   width: 1000vw;
   background: #f8f8f8;
-  transform: rotateY(90deg);
+  transform: rotateY(90deg) translateZ(-500vw);
 }
 .wall-right {
-  left: -500vw;
   width: 1000vw;
   background: #f8f8f8;
-  transform: rotateY(90deg) translateZ(100vw);
+  transform: rotateY(90deg) translateZ(-400vw);
 }
 .wall-front-a {
   transform: translateZ(300vw);
